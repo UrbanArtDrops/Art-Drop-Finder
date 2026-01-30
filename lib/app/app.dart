@@ -26,6 +26,7 @@ import 'package:art_drop_finder/features/drops/domain/usecases/update_drops_avai
 import 'package:art_drop_finder/features/drops/presentation/controllers/drops_controller.dart';
 import 'package:art_drop_finder/features/drops/presentation/pages/claim_drop_page.dart';
 import 'package:art_drop_finder/features/drops/presentation/pages/drops_home_page.dart';
+import 'package:art_drop_finder/core/widgets/app_logo.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -133,7 +134,7 @@ class _InvalidClaimPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Drop beanspruchen')),
+      appBar: AppBar(title: const AppLogoTitle(title: 'Drop beanspruchen')),
       body: const Center(child: Text('Ungueltiger Link.')),
     );
   }

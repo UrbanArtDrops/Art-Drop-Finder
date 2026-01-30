@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:art_drop_finder/core/usecase/usecase.dart';
+import 'package:art_drop_finder/core/widgets/app_logo.dart';
 import 'package:art_drop_finder/features/home/data/datasources/greeting_local_data_source.dart';
 import 'package:art_drop_finder/features/home/data/repositories/greeting_repository_impl.dart';
 import 'package:art_drop_finder/features/home/domain/usecases/get_greeting.dart';
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Art Drop Finder'),
+        title: const AppLogoTitle(title: 'Art Drop Finder'),
       ),
       body: Center(
         child: GreetingText(message: greeting.message),

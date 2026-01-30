@@ -7,19 +7,34 @@
         {
             "name": "art_drop_finder",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "env": {
+                "appwriteProjectId": "69612c0c0030088c3706",
+                "appwriteDatabaseId": "696130d600016be805ad",
+                "appwriteArtDropImagesBucketId": "6963cd440017d63503fb"
+            }
         },
         {
             "name": "art_drop_finder (profile mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "profile",
+            "env": {
+                "appwriteProjectId": "69612c0c0030088c3706",
+                "appwriteDatabaseId": "696130d600016be805ad",
+                "appwriteArtDropImagesBucketId": "6963cd440017d63503fb"
+            }
         },
         {
             "name": "art_drop_finder (release mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "release",
+            "env": {
+                "appwriteProjectId": "69612c0c0030088c3706",
+                "appwriteDatabaseId": "696130d600016be805ad",
+                "appwriteArtDropImagesBucketId": "6963cd440017d63503fb"
+            }
         }
     ]
 }

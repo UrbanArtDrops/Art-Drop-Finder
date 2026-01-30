@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:art_drop_finder/features/drops/domain/entities/art_drop.dart';
 import 'package:art_drop_finder/features/drops/presentation/controllers/drops_controller.dart';
 import 'package:art_drop_finder/features/drops/presentation/widgets/drop_show_card.dart';
+import 'package:art_drop_finder/core/widgets/app_logo.dart';
 
 class ClaimDropPage extends StatefulWidget {
   final DropsController controller;
@@ -68,7 +69,7 @@ class _ClaimDropPageState extends State<ClaimDropPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Drop beanspruchen')),
+      appBar: AppBar(title: const AppLogoTitle(title: 'Drop beanspruchen')),
       body: AnimatedBuilder(
         animation: widget.controller,
         builder: (context, _) {

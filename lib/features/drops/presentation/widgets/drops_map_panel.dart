@@ -597,33 +597,6 @@ LatLngBounds? _boundsForDrops(List<ArtDrop> drops) {
   );
 }
 
-class _MapCountChip extends StatelessWidget {
-  final String label;
-  final int count;
-  final Color color;
-
-  const _MapCountChip({
-    required this.label,
-    required this.count,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.15),
-        borderRadius: BorderRadius.circular(999),
-      ),
-      child: Text(
-        '$label: $count',
-        style: Theme.of(context).textTheme.labelMedium,
-      ),
-    );
-  }
-}
-
 class _MapLegendDot extends StatelessWidget {
   final String label;
   final Color color;

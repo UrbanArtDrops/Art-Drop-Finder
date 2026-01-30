@@ -29,12 +29,14 @@ finders can claim a drop via a QR code link.
 ### Configure Appwrite
 Update the Appwrite constants in `lib/core/appwrite_client.dart`:
 - `appwriteEndpoint`
-- `appwriteProjectId`
-- `appwriteDatabaseId`
 - `appwriteArtDropsCollectionId`
 - `appwriteDropClaimsCollectionId`
 - `appwriteSocialPostsCollectionId`
 - `appwriteDropImagesCollectionId`
+
+Provide these via environment variables (compile-time `--dart-define`):
+- `appwriteProjectId`
+- `appwriteDatabaseId`
 - `appwriteArtDropImagesBucketId`
 
 ### Recommended database schema

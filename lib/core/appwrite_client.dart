@@ -1,14 +1,15 @@
 import 'package:appwrite/appwrite.dart';
 
-// Update these IDs to match your Appwrite project setup.
+// IDs are provided via compile-time environment variables (e.g. --dart-define).
 const String appwriteEndpoint = 'https://fra.cloud.appwrite.io/v1';
-const String appwriteProjectId = '69612c0c0030088c3706';
-const String appwriteDatabaseId = '696130d600016be805ad';
+const String appwriteProjectId = String.fromEnvironment('appwriteProjectId');
+const String appwriteDatabaseId = String.fromEnvironment('appwriteDatabaseId');
 const String appwriteArtDropsCollectionId = 'art_drops';
 const String appwriteDropClaimsCollectionId = 'drop_claims';
 const String appwriteSocialPostsCollectionId = 'social_posts';
 const String appwriteDropImagesCollectionId = 'drop_images';
-const String appwriteArtDropImagesBucketId = '6963cd440017d63503fb';
+const String appwriteArtDropImagesBucketId =
+    String.fromEnvironment('appwriteArtDropImagesBucketId');
 const bool appwriteArtDropIncludeIdField = false;
 const bool appwriteArtDropIncludeCreatedAtField = false;
 const bool appwriteArtDropIncludeDropsAvailableField = false;

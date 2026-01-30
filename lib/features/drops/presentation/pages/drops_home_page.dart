@@ -6,6 +6,7 @@ import 'package:art_drop_finder/features/drops/presentation/controllers/drops_co
 import 'package:art_drop_finder/features/drops/presentation/pages/drops_page.dart';
 import 'package:art_drop_finder/features/drops/presentation/widgets/drops_map_panel.dart';
 import 'package:art_drop_finder/features/drops/presentation/widgets/drop_show_card.dart';
+import 'package:art_drop_finder/core/widgets/app_logo.dart';
 
 class DropsHomePage extends StatefulWidget {
   final DropsController controller;
@@ -82,7 +83,7 @@ class _DropsHomePageState extends State<DropsHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Urban Art-Drops'),
+        title: const AppLogoTitle(title: 'Urban Art-Drops'),
         actions: [
           TextButton.icon(
             onPressed: () => _openLogin(context),

@@ -3,6 +3,7 @@ import 'package:art_drop_finder/features/auth/domain/entities/artist.dart';
 import 'package:art_drop_finder/features/drops/presentation/controllers/drops_controller.dart';
 import 'package:art_drop_finder/features/drops/presentation/pages/create_drop_page.dart';
 import 'package:art_drop_finder/features/drops/presentation/pages/manage_drops_page.dart';
+import 'package:art_drop_finder/core/widgets/app_logo.dart';
 
 class DropsPage extends StatefulWidget {
   final DropsController controller;
@@ -41,7 +42,7 @@ class _DropsPageState extends State<DropsPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Art Drop Finder'),
+        title: const AppLogoTitle(title: 'Art Drop Finder'),
         actions: [
           Center(
             child: Padding(

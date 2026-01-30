@@ -7,6 +7,7 @@ import 'package:art_drop_finder/core/utils/platform_image.dart';
 import 'package:art_drop_finder/features/drops/domain/entities/art_drop.dart';
 import 'package:art_drop_finder/features/drops/domain/entities/drop_image.dart';
 import 'package:art_drop_finder/features/drops/presentation/controllers/drops_controller.dart';
+import 'package:art_drop_finder/core/widgets/app_logo.dart';
 
 class EditDropPage extends StatefulWidget {
   final DropsController controller;
@@ -277,7 +278,7 @@ class _EditDropPageState extends State<EditDropPage> {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Art-Drop bearbeiten'),
+        title: const AppLogoTitle(title: 'Art-Drop bearbeiten'),
       ),
       body: AnimatedBuilder(
         animation: widget.controller,

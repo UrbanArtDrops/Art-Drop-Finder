@@ -185,9 +185,9 @@ class _DropShowCardState extends State<DropShowCard> {
                           subtitle: Text('$dateLabel, $timeLabel'),
                           leading: CircleAvatar(
                             radius: 14,
-                            child: Text('${index + 1}'),
                             backgroundColor: Colors.black,
                             foregroundColor: Colors.white,
+                            child: Text('${index + 1}'),
                           ),
                           minVerticalPadding: 6,
                         ),
@@ -255,49 +255,6 @@ class _DropShowCardState extends State<DropShowCard> {
   }
 
   int _countClaims(List<DropClaim> claims) => claims.length;
-}
-
-class _SquareStatButton extends StatelessWidget {
-  final String label;
-  final String value;
-  final VoidCallback? onPressed;
-
-  const _SquareStatButton({
-    required this.label,
-    required this.value,
-    this.onPressed,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return AspectRatio(
-      aspectRatio: 1,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: theme.colorScheme.surfaceContainerHighest,
-          foregroundColor: theme.colorScheme.onSurface,
-          elevation: 2,
-          padding: EdgeInsets.zero,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(label, style: theme.textTheme.labelSmall),
-              const SizedBox(height: 6),
-              Text(value, style: theme.textTheme.headlineSmall),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 }
 
 class _DropImageSlide {

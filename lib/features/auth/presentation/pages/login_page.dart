@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:art_drop_finder/features/auth/domain/entities/artist.dart';
 import 'package:art_drop_finder/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:art_drop_finder/core/widgets/app_logo.dart';
 
 class LoginPage extends StatefulWidget {
   final AuthController controller;
@@ -73,6 +74,8 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    const Center(child: AppLogo(size: 64)),
+                    const SizedBox(height: 16),
                     Text(
                       'Künstler-Login',
                       style: Theme.of(context).textTheme.headlineSmall,
