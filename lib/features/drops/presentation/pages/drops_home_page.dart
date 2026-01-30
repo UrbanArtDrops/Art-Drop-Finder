@@ -83,7 +83,7 @@ class _DropsHomePageState extends State<DropsHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const AppLogoTitle(title: 'Urban Art-Drops'),
+        title: const Text('Urban Art Drop Finder'),
         actions: [
           TextButton.icon(
             onPressed: () => _openLogin(context),
@@ -97,6 +97,13 @@ class _DropsHomePageState extends State<DropsHomePage> {
         builder: (context, _) {
           final drops = widget.controller.drops;
           final claimersByDropId = _claimersByDropId(drops);
+          const header = AppHeaderSection(
+            title: 'Art Drop Finder',
+            description:
+                'Finde Urban Art-Drops in deiner Naehe, entdecke Fotos und '
+                'sieh, wie viele Drops noch verfuegbar sind. '
+                'Kuenstler koennen neue Drops veroeffentlichen und verwalten.',
+          );
           final listView = drops.isEmpty
               ? const Center(
                   child: Text('Noch keine Art-Drops veroeffentlicht.'),
@@ -122,18 +129,47 @@ class _DropsHomePageState extends State<DropsHomePage> {
           return LayoutBuilder(
             builder: (context, constraints) {
               if (constraints.maxWidth >= 960) {
-                return Row(
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(flex: 1, child: listView),
-                    //const VerticalDivider(width: 1),
+                    //header,
                     Expanded(
-                      flex: 4,
-                      child: DropsMapPanel(
-                        drops: drops,
-                        selectedDropId: _selectedDropId,
-                        focusDropId: _focusDropId,
-                        focusNonce: _focusNonce,
-                        claimersByDropId: claimersByDropId,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: Card(
+                              color: Colors.grey[300],
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  header,
+                                  SizedBox(height: 16),
+                                  Text(
+                                    "Verfügbare Art Drops",
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.headlineMedium,
+                                    textAlign: TextAlign.start,
+                                  ),
+                                  SizedBox(height: 16),
+                                  listView,
+                                ],
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 4,
+                            child: DropsMapPanel(
+                              drops: drops,
+                              selectedDropId: _selectedDropId,
+                              focusDropId: _focusDropId,
+                              focusNonce: _focusNonce,
+                              claimersByDropId: claimersByDropId,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -141,15 +177,22 @@ class _DropsHomePageState extends State<DropsHomePage> {
               }
               return Column(
                 children: [
-                  Expanded(child: listView),
-                  SizedBox(
-                    height: 320,
-                    child: DropsMapPanel(
-                      drops: drops,
-                      selectedDropId: _selectedDropId,
-                      focusDropId: _focusDropId,
-                      focusNonce: _focusNonce,
-                      claimersByDropId: claimersByDropId,
+                  header,
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Expanded(child: listView),
+                        SizedBox(
+                          height: 320,
+                          child: DropsMapPanel(
+                            drops: drops,
+                            selectedDropId: _selectedDropId,
+                            focusDropId: _focusDropId,
+                            focusNonce: _focusNonce,
+                            claimersByDropId: claimersByDropId,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
